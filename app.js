@@ -6,49 +6,56 @@ const apiUrl = `http://localhost:${port}`;
 const posts = [
   {
     id: 1,
-    title: "Grandma's Ciambellone",
+    title: "Ciambellone della nonna",
     content:
-      "A soft and fragrant classic, perfect for breakfast or an afternoon snack. Finished with powdered sugar.",
+      "Un classico soffice e profumato, perfetto a colazione o a merenda. Spolverata di zucchero a velo e via!",
     image: "/ciambellone.jpeg",
-    tags: ["dessert", "breakfast", "traditional", "baked"],
+    tags: ["dolci", "colazione", "tradizione", "forno"],
   },
   {
     id: 2,
-    title: "Beetroot Crackers",
+    title: "Cracker alla barbabietola",
     content:
-      "Crunchy and colorful crackers. Beetroot gives them a unique flavor and vibrant look. Great with yogurt sauce.",
+      "Cracker croccanti e coloratissimi: la barbabietola dà gusto e un colore pazzesco. Ottimi con una salsa allo yogurt.",
     image: "/cracker_barbabietola.jpeg",
-    tags: ["snack", "savory", "beetroot", "vegetarian"],
+    tags: ["snack", "salato", "barbabietola", "vegetariano"],
   },
   {
     id: 3,
-    title: "Sweet Fried Bread",
+    title: "Pane fritto dolce",
     content:
-      "A no-waste recipe: stale bread fried and coated in sugar. Simple, quick and delicious.",
+      "Ricetta anti-spreco: pane raffermo, una passata in padella e zucchero. Semplice, veloce e super goloso.",
     image: "/pane_fritto_dolce.jpeg",
-    tags: ["dessert", "no-waste", "quick", "traditional"],
+    tags: ["dolci", "anti-spreco", "veloce", "tradizione"],
   },
   {
     id: 4,
-    title: "Beetroot Pasta with Pistachios",
+    title: "Pasta alla barbabietola e pistacchi",
     content:
-      "A creamy and original pasta dish: beetroot for the sauce and pistachios for crunch.",
+      "Un primo piatto cremoso e originale: barbabietola per la crema, pistacchi per la croccantezza. Bellissima anche da vedere.",
     image: "/pasta_barbabietola.jpeg",
-    tags: ["pasta", "main-course", "beetroot", "pistachios"],
+    tags: ["primi", "pasta", "barbabietola", "pistacchi"],
   },
   {
     id: 5,
-    title: "Country Chocolate Cake",
+    title: "Torta paesana",
     content:
-      "A rustic traditional cake made with cocoa, bread and dried fruit. Rich and full of flavor.",
+      "Dolce rustico della tradizione: cacao, pane e frutta secca. Perfetto quando vuoi qualcosa di sostanzioso e profumato.",
     image: "/torta_paesana.jpeg",
-    tags: ["dessert", "traditional", "no-waste", "baked"],
+    tags: ["dolci", "tradizione", "anti-spreco", "forno"],
   },
 ];
 
 app.get("/", (req, res) => {
   res.json({
     message: "Server del mio blog",
+  });
+});
+
+app.get("/bacheca", (req, res) => {
+  res.json({
+    resultLength: posts.length,
+    result: posts,
   });
 });
 
